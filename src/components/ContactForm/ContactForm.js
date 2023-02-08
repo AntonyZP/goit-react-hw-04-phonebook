@@ -3,7 +3,6 @@
 
  import {Form, Label, ContactInput, AddButton} from './ContactForm.styled'
 
-
  class ContactForm extends Component {
     state = { 
         name: '',
@@ -67,10 +66,9 @@
     
 export default ContactForm;
 
-
-// ContactForm.propTypes = {
-//     name: PropTypes.string,
-//     number: PropTypes.string,
-//     onSubmit: PropTypes.func.isRequired,
-// };
+ContactForm.propTypes = {
+    name: PropTypes.string,
+    number: PropTypes.string,
+    onSubmit: PropTypes.func.isRequired,
+};
 
