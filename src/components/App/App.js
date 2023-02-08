@@ -6,7 +6,6 @@ import ContactForm from 'components/ContactForm';
 import Filter from 'components/Filter';
 import { Section,  Title, SubTitle, ListWrapper} from "components/App/App.styled";
 
-
 const getInitialContacts = () => {
   const savedContacts = localStorage.getItem('contacts');
   if (savedContacts !== null) {
