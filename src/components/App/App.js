@@ -56,7 +56,7 @@ export const App = () => {
   return ( 
     <Section>
       <Title>Phonebook</Title>
-      <ContactForm onSubmit ={formSubmitHandler}></ContactForm>
+      <ContactForm contacts={contacts} onSubmit ={formSubmitHandler}></ContactForm>
     
       <SubTitle>Contacts</SubTitle>
       <ListWrapper>
