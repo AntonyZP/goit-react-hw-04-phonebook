@@ -10,7 +10,7 @@ export const FormAdd = styled(Form)`
   padding-bottom: 60px;
   box-shadow: 2px 3px 5px #3d3d3d;
   border-radius: 7px;
-  background-color: #d6dbf7;
+  background-color: #c9bfb9;
 `;
 
 export const Label = styled.label`
@@ -29,7 +29,6 @@ export const ContactInput = styled(Field)`
   margin-bottom: 16px;  
   width: 320px;
   padding: 4px 8px;
-  background-color: d6dbf7;
   border-radius: 5px;
   box-shadow: 2px 2px 4px #4d4d4d;
   outline: transparent;
@@ -44,7 +43,7 @@ export const AddButton = styled.button`
   font-size: 18px;
   color: #ffffff;
   width: 200px;
-  background: #2196f3;
+  background: #553E3E;
   border: none;
   border-radius: 7px;
   box-shadow: 2px 3px 5px #3d3d3d;
@@ -57,3 +56,8 @@ export const AddButton = styled.button`
   }
 `;
 
+export const ErrorNote = styled.div`
+  margin-bottom: 20px;  
+  font-size: 22px;
+  color: red;
+`;

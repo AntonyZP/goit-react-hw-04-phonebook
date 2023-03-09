@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { FormAdd, Label, AddButton, ContactInput } from './ContactForm.styled'
+import { FormAdd, Label, AddButton, ContactInput, ErrorNote } from './ContactForm.styled'
 
 const ContactForm =({ onSubmit, contacts })=> {
-  const initialsValues = {
+  const initialValues = {
     name: '',
     number: '',
   };
@@ -14,13 +14,13 @@ const ContactForm =({ onSubmit, contacts })=> {
   }    
 
   const UserSchema = yup.object().shape({
-  name: yup.string().min(2).max(30).required(),
-  number: yup.string().min(12).max(30).required(),
+  name: yup.string().min(1).max(18).required(),
+  number: yup.string().min(5).max(18).required(),
   });
 
   return (   
     <Formik
-      initialValues={initialsValues}
+      initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={UserSchema}
     >
@@ -32,23 +32,31 @@ const ContactForm =({ onSubmit, contacts })=> {
               <ContactInput
                   type="text"
                   name="name"
+                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                  placeholder="Tom Riddle"
+                  required
                   />
-              <div>
+              <ErrorNote>
                 <ErrorMessage name="name" />
-              </div>               
+              </ErrorNote>               
               </Label>
               <Label>
               Number
               <ContactInput
                   type="tel"
                   name="number"
+                  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+                  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+                  placeholder="+380..."
+                  required
                   />
-              <div>
+              <ErrorNote>
                 <ErrorMessage name="number" />
-              </div>   
+              </ErrorNote>   
               </Label>
           </div>            
-          <AddButton type='submit' disabled={!props.values.name || !props.values.number} >
+          <AddButton type='submit'  >
             Add contact                           
           </AddButton>
         </FormAdd> )}

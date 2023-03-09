@@ -6,7 +6,7 @@ export const Section = styled.div`
   padding-bottom:20px;
   font-size: 36px;
   color: #010101;
-  background-color: #c3c3c0;
+  background-color: #a8958a;
 `;
 
 export const Title = styled.h1`
@@ -24,7 +24,7 @@ export const ListWrapper = styled.div`
   padding: 20px;
   list-style: none;
   align-items: center;
-  background-color: #d6dbf7;
+  background-color: #c9bfb9;
   box-shadow: 2px 3px 5px #3d3d3d;
   border-radius: 7px;
 `;
